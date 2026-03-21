@@ -187,6 +187,262 @@
           ]
         }
       ]
+    },
+    "2871": {
+      "name": "Airbus a320neo",
+      "index": [0],
+      "parts": [0],
+      "liveries": [
+        {
+          "name": "China Southern Airlines",
+          "credits": "KN5290",
+          "texture": [
+            "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/a320neo/chinasouthern.png"
+          ]
+        },
+        {
+          "name": "Colorful Guizhou Airlines (China Moutai livery)",
+          "credits": "CP8888",
+          "texture": [
+            "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/a320neo/GY_moutai.png"
+          ]
+        },
+        {
+          "name": "China Express (Oriental Fumigation Dao livery)",
+          "credits": "CP8888",
+          "texture": [
+            "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/a320neo/China_ExpressB-324E.png"
+          ]
+        },
+        {
+          "name": "Play",
+          "credits": "CP8888",
+          "texture": [
+            "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/a320neo/play.png"
+          ]
+        },
+        {
+          "name": "Qingdao Airlines (Jinghong livery)",
+          "credits": "CP8888",
+          "texture": [
+            "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/a320neo/qingdaojinghong.png"
+          ]
+        },
+        {
+          "name": "Spring Airlines",
+          "credits": "KN5290",
+          "texture": [
+            "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/a320neo/spring_airlines.png"
+          ]
+        },
+        {
+          "name": "Xiamen Airlines",
+          "credits": "CP8888",
+          "texture": [
+            "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/a320neo/xiamen.png"
+          ]
+        }
+      ]
+    },
+    "2769": {
+      "name": "Boeing b737-max8",
+      "index": [0],
+      "parts": [0],
+      "liveries": [
+        {
+          "name": "Air China (National flag)",
+          "credits": "CP8888",
+          "texture": [
+            "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/7m8/Air_China.png"
+          ]
+        },
+        {
+          "name": "Air China (Zhoushan Hello livery)",
+          "credits": "CP8888 ＆ TOMAIM",
+          "texture": [
+            "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/7m8/airchinazhoushan.png"
+          ]
+        },
+        {
+          "name": "Air India Express (China Eastern livery)",
+          "credits": "KN5290",
+          "texture": [
+            "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/7m8/VT-BWI.png"
+          ]
+        },
+        {
+          "name": "China Southern Airlines",
+          "credits": "CP8888",
+          "texture": [
+            "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/7m8/Chinasouthern.png"
+          ]
+        },
+        {
+          "name": "China Southern Airlines (with SkyTeam logo)",
+          "credits": "CP8888",
+          "texture": [
+            "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/7m8/Chinasouthernskyteamlogopng"
+          ]
+        },
+        {
+          "name": "Shandong Airlines (CAQ livery)",
+          "credits": "HO1796[Sino Wings Group]",
+          "texture": [
+            "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/7m8/shandongCAQ.png"
+          ]
+        },
+        {
+          "name": "Shandong Airlines (Hainan Airlines tail wing)",
+          "credits": "TOMAIM",
+          "texture": [
+            "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/7m8/N234BE.png"
+          ]
+        }
+      ]
+    },
+    "3180": {
+      "name": "Boeing b787-10",
+      "index": [0],
+      "parts": [0],
+      "liveries": [
+        {
+          "name": "Korean Air (Blackpink livery V1)",
+          "credits": "TOMAIM",
+          "texture": [
+            "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/78x/koreanblankpink.png"
+          ]
+        },
+        {
+          "name": "Korean Air (Blackpink livery V2)",
+          "credits": "TOMAIM",
+          "texture": [
+            "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/78x/KoreanAir&BlackPink_V2.png"
+          ]
+        },
+        {
+          "name": "Singapore Airlines",
+          "credits": "CP8888",
+          "texture": [
+            "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/78x/SQ.png"
+          ]
+        }
+      ]
+    },
+    "3054": {
+      "name": "Boeing b737-800",
+      "index": [0],
+      "parts": [0],
+      "liveries": [
+        {
+          "name": "China Eastern Airlines (old design)",
+          "credits": "TOMAIM",
+          "texture": [
+            "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/738/Chinaeasternold.png"
+          ]
+        },
+        {
+          "name": "China Eastern Airlines (Skyteam livery)",
+          "credits": "KN5290",
+          "texture": [
+            "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/738/ChinaeasternSkyteam.png"
+          ]
+        },
+        {
+          "name": "China United Airlines (Chengdu livery)",
+          "credits": "HO1796[Sino Wings Group]",
+          "texture": [
+            "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/738/CUAchengdu.png"
+          ]
+        },
+        {
+          "name": "Hebei Airlines (20th aircraft livery)",
+          "credits": "CP8888",
+          "texture": [
+            "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/738/hebei20th.png"
+          ]
+        },
+        {
+          "name": "Mandarin Airlines (new design)",
+          "credits": "CP8888",
+          "texture": [
+            "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/738/mandarin.png"
+          ]
+        }
+      ]
+    },
+    "2892": {
+      "name": "Saab 340",
+      "index": [0],
+      "parts": [0],
+      "liveries": [
+        {
+          "name": "UN,
+          "credits": "HO1796[Sino Wings Group]",
+          "texture": [
+            "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/saab340/UN.png"
+          ]
+        }
+      ]
+    },
+    "24": {
+      "name": "Airbus a350-900",
+      "index": [2, 3],
+      "parts": [0, 0],
+      "liveries": [
+        {
+          "name": "Finnair (Santa Claus livery)",
+          "credits": "CP8888",
+          "texture": [
+            "/models/aircraft/premium/a350/specular.jpg",
+            "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/a359/FinnairSantaClaus.png"
+          ]
+        },
+        {
+          "name": "ITA Airways (Born to be Sustainable livery)",
+          "credits": "KN5290",
+          "texture": [
+            "/models/aircraft/premium/a350/specular.jpg",
+            "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/a359/ITA.png"
+          ]
+        },
+        {
+          "name": "Starlux",
+          "credits": "TOMAIM",
+          "texture": [
+            "/models/aircraft/premium/a350/specular.jpg",
+            "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/a359/starlux.png"
+          ]
+        },
+        {
+          "name": "World2fly",
+          "credits": "KN5290",
+          "texture": [
+            "/models/aircraft/premium/a350/specular.jpg",
+            "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/a359/World2fly.png"
+          ]
+        }
+      ]
+    },
+    "4631": {
+      "name": "Airbus a330-900neo",
+      "index": [0],
+      "parts": [0],
+      "liveries": [
+        {
+          "name": "Hainan Airlines",
+          "credits": "TOMAIM, CP8888 ＆ HO1796[Sino Wings Group]",
+          "texture": [
+            "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/a339/hainannew.png"
+          ]
+        },
+        {
+          "name": "Thai Airways (Star Alliance livery)",
+          "credits": "CP8888,
+          "texture": [
+            "https://i.ibb.co/YTXHyFr5/Thaistar.png"
+          ]
+        }
+      ]
     }
   }
 }
