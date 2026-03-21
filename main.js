@@ -1,24 +1,27 @@
 // ==UserScript==
 // @name         GeoFS-liveries-that-has-not-been-updated
-// @match        *://*.geofs.com/*
+// @namespace    http://tampermonkey.net/
+// @version      2026-03-21
+// @description  GeoFS-liveries-that-has-not-been-updated
+// @author       chatGPT＆CP8888
+// @match        https://www.geo-fs.com/geofs.php?v=3.9
+// @icon         https://www.google.com/s2/favicons?sz=64&domain=geo-fs.com
 // @grant        none
 // ==/UserScript==
 
 (function () {
     'use strict';
 
-    let panel, listContainer, searchInput, favoriteBtn;
+    let panel, listContainer, searchInput;
     let data;
     let lastAircraftId = null;
     let currentList = [];
-    let showFavoritesOnly = false;
-    const favorites = {}; // {aircraftId: Set of livery names}
 
     const jsonUrl = "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/main/livery.json"; // Make sure this is the raw URL
 
     // ===== Wait for GeoFS =====
     const wait = setInterval(() => {
-        if (window.geofs && window.LiverySelector && geofs.aircraft?.instance) {
+        if (window.geofs && geofs.aircraft?.instance) {
             clearInterval(wait);
             init();
         }
@@ -75,17 +78,6 @@
         searchInput.oninput = filterList;
         panel.appendChild(searchInput);
 
-        // Favorites Toggle Button
-        favoriteBtn = document.createElement("button");
-        favoriteBtn.textContent = "Show Favorites: OFF";
-        favoriteBtn.style.marginTop = "6px";
-        favoriteBtn.onclick = () => {
-            showFavoritesOnly = !showFavoritesOnly;
-            favoriteBtn.textContent = `Show Favorites: ${showFavoritesOnly ? "ON" : "OFF"}`;
-            filterList();
-        };
-        panel.appendChild(favoriteBtn);
-
         // List Container (Scroll Area)
         listContainer = document.createElement("div");
         Object.assign(listContainer.style, {
@@ -98,36 +90,25 @@
         document.body.appendChild(panel);
     }
 
-    // ===== Apply Livery (with Fallback) =====
+    // ===== Apply Livery (with Fallback - No LiverySelector) =====
     function applyLivery(livery) {
 
         const id = geofs.aircraft.instance.id;
-        const airplane = window.LiverySelector?.liveryobj?.aircrafts[id];
+        const aircraft = geofs.aircraft.instance;
 
-        if (airplane) {
-            // Official LiverySelector
-            window.LiverySelector.loadLivery(
-                livery.texture,
-                airplane.index,
-                airplane.parts,
-                livery.materials
-            );
-            console.log("Official Apply");
-        } else {
-            // Fallback method
-            console.log("Fallback Apply");
-            const aircraft = geofs.aircraft.instance;
+        if (!aircraft) return;
 
-            let i = 0;
-            aircraft.object3d.traverse((child) => {
-                if (child.material && child.material.map && livery.texture[i]) {
-                    const tex = new THREE.TextureLoader().load(livery.texture[i]);
-                    child.material.map = tex;
-                    child.material.needsUpdate = true;
-                    i++;
-                }
-            });
-        }
+        let i = 0;
+        aircraft.object3d.traverse((child) => {
+            if (child.material && child.material.map && livery.texture[i]) {
+                const tex = new THREE.TextureLoader().load(livery.texture[i]);
+                child.material.map = tex;
+                child.material.needsUpdate = true;
+                i++;
+            }
+        });
+
+        console.log("Applied:", livery.name);
     }
 
     // ===== Gradient Effect =====
@@ -201,8 +182,7 @@
         currentList = ac.liveries
             .filter(l => {
                 const matchKeyword = l.name.toLowerCase().includes(keyword) || (l.credits || "").toLowerCase().includes(keyword);
-                const matchFav = !showFavoritesOnly || (favorites[id]?.has(l.name));
-                return matchKeyword && matchFav;
+                return matchKeyword;
             })
             .sort((a, b) => a.name.localeCompare(b.name));
 
@@ -218,16 +198,14 @@
             if (id !== lastAircraftId) {
                 lastAircraftId = id;
                 searchInput.value = "";
-                showFavoritesOnly = false;
-                favoriteBtn.textContent = "Show Favorites: OFF";
                 filterList();
             }
         }, 1000);
     }
 
-    // ===== Handle ALT Key (UI Toggle) =====
+    // ===== Handle SHIFT Key (UI Toggle) =====
     document.addEventListener("keydown", (e) => {
-        if (e.key === "Alt") {
+        if (e.key === "Shift") {
             panel.style.display = panel.style.display === "none" ? "flex" : "none";
         }
     });
