@@ -1,0 +1,192 @@
+{
+  "aircrafts": {
+    "4": {
+      "name": "Boeing b737-700",
+      "index": [0, 2, 3],
+      "parts": [0, 0, 0],
+      "liveries": [
+        {
+          "name": "SAS (old design)",
+          "credits": "CP8888",
+          "texture": [
+            "/models/aircraft/premium/737_700/normal.jpg",
+            "/models/aircraft/premium/737_700/specular.jpg",
+            "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/b737-700/SASold.png"
+          ]
+        }   
+      ]
+    },
+    "237": {
+      "name": "Boeing b767-300ER",
+      "index": [0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "parts": [0, 23, 27, 28, 29, 30, 31, 32, 36],
+      "liveries": [
+        {
+          "name": "Shanghai Airlines (old design)",
+          "credits": "TOMAIM",
+          "texture": [
+            "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/b767-300er/shanghaiold.png",
+            "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/b767-300er/shanghaiold.png",
+            "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/b767-300er/shanghaiold.png",
+            "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/b767-300er/shanghaiold.png",
+            "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/b767-300er/shanghaiold.png",
+            "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/b767-300er/shanghaiold.png",
+            "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/b767-300er/shanghaiold.png",
+            "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/b767-300er/shanghaiold.png",
+            "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/b767-300er/shanghaiold.png"
+          ]
+        }        
+      ]
+    },
+    "238": {
+      "name": "Boeing b757-200",
+      "index": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "parts": [0, 9, 23, 24, 25, 26, 27, 28, 29, 30, 37],
+      "liveries": [
+        {
+          "name": "Air China",
+          "credits": "CP8888",
+          "texture": [
+            "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/b757-200/airchina.png",
+            "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/b757-200/airchina.png",
+            "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/b757-200/airchina.png",
+            "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/b757-200/airchina.png",
+            "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/b757-200/airchina.png",
+            "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/b757-200/airchina.png",
+            "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/b757-200/airchina.png",
+            "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/b757-200/airchina.png",
+            "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/b757-200/airchina.png",
+            "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/b757-200/airchina.png",
+            "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/b757-200/airchina.png"
+          ]
+        }        
+      ]
+    },
+    "2879": {
+      "name": "Airbus a319-100",
+      "index": [0],
+      "parts": [0],
+      "liveries": [
+        {
+          "name": "Air China (B-6033)",
+          "credits": "CP8888",
+          "texture": [
+            "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/a319/B6033.png"
+          ]
+        },
+        {
+          "name": "Air China (Flagless)",
+          "credits": "CP8888",
+          "texture": [
+            "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/a319/airchina_flagless.png"
+          ]
+        },
+        {
+          "name": "China Northeast Airlines",
+          "credits": "CP8888",
+          "texture": [
+            "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/a319/NS.png"
+          ]
+        },
+        {
+          "name": "Deer Jet",
+          "credits": "CP8888",
+          "texture": [
+            "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/a319/deerjet.png"
+          ]
+        }
+      ]
+    },
+    "2973": {
+      "name": "Airbus a350-1000",
+      "index": [0],
+      "parts": [0],
+      "liveries": [
+        {
+          "name": "Air China Cargo",
+          "credits": "TOMAIM",
+          "texture": [
+            "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/a350-1000/airchinacargo.png"
+          ]
+        },
+        {
+          "name": "Air China Cargo (red cargo logo)",
+          "credits": "TOMAIM",
+          "texture": [
+            "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/a350-1000/airchinacargored.png"
+          ]
+        },
+        {
+          "name": "Starlux (Airsorayama Silver design)",
+          "credits": "TOMAIM",
+          "texture": [
+            "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/a350-1000/StarluxAirsorayamaSilver.png"
+          ]
+        }
+      ]
+    },
+    "3575": {
+      "name": "Boeing b787-9",
+      "index": [0],
+      "parts": [0],
+      "liveries": [
+        {
+          "name": "Air China (white nose)",
+          "credits": "CP8888",
+          "texture": [
+            "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/b787-9/Air_China_white_nose.png"
+          ]
+        },
+        {
+          "name": "ANA (Star Alliance livery)",
+          "credits": "CP8888",
+          "texture": [
+            "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/b787-9/ANAstar.png"
+          ]
+        },
+        {
+          "name": "China Eastern Airlines (Headquarters)",
+          "credits": "KN5290",
+          "texture": [
+            "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/b787-9/MUHeadquarters.jpg"
+          ]
+        },
+        {
+          "name": "China Southern Airlines",
+          "credits": "TOMAIM ＆ 開飛機のzm[Sino Wings Group]",
+          "texture": [
+            "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/b787-9/China_southern.png"
+          ]
+        },
+        {
+          "name": "Hainan Airlines (Soyteax 5 star Skytrax livery)",
+          "credits": "TOMAIM",
+          "texture": [
+            "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/b787-9/hainan5star.png"
+          ]
+        },
+        {
+          "name": "Korean Air",
+          "credits": "CP8888",
+          "texture": [
+            "https://i.ibb.co/jZM54RGK/koreanair.png"
+          ]
+        }
+      ]
+    },
+    "3534": {
+      "name": "Airbus a320-214",
+      "index": [0],
+      "parts": [0],
+      "liveries": [
+        {
+          "name": "Spring Airlines (Smartee Invisible Orthodontic Appliance livery)",
+          "credits": "CP8888",
+          "texture": [
+            "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/a320-214/B6841.png"
+          ]
+        }
+      ]
+    }
+  }
+}
