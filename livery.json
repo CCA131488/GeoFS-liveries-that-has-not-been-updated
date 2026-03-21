@@ -1,4 +1,9 @@
 {
+  "livery_types": {
+    "1": "real",   
+    "2": "virtual"
+  },
+  {
   "aircrafts": {
     "4": {
       "name": "Boeing b737-700",
@@ -12,7 +17,8 @@
             "/models/aircraft/premium/737_700/normal.jpg",
             "/models/aircraft/premium/737_700/specular.jpg",
             "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/b737-700/SASold.png"
-          ]
+          ],
+          "type_id": 1
         }   
       ]
     },
@@ -34,7 +40,8 @@
             "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/b767-300er/shanghaiold.png",
             "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/b767-300er/shanghaiold.png",
             "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/b767-300er/shanghaiold.png"
-          ]
+          ],
+          "type_id": 1
         }        
       ]
     },
@@ -58,7 +65,8 @@
             "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/b757-200/airchina.png",
             "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/b757-200/airchina.png",
             "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/b757-200/airchina.png"
-          ]
+          ],
+          "type_id": 1
         }        
       ]
     },
@@ -93,7 +101,8 @@
           "credits": "CP8888",
           "texture": [
             "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/a319/deerjet.png"
-          ]
+          ],
+          "type_id": 1
         }
       ]
     },
@@ -121,7 +130,8 @@
           "credits": "TOMAIM",
           "texture": [
             "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/a350-1000/StarluxAirsorayamaSilver.png"
-          ]
+          ],
+          "type_id": 1
         }
       ]
     },
@@ -170,7 +180,8 @@
           "credits": "CP8888",
           "texture": [
             "https://i.ibb.co/jZM54RGK/koreanair.png"
-          ]
+          ],
+          "type_id": 1
         }
       ]
     },
@@ -184,7 +195,8 @@
           "credits": "CP8888",
           "texture": [
             "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/a320-214/B6841.png"
-          ]
+          ],
+          "type_id": 1
         }
       ]
     },
@@ -240,7 +252,8 @@
           "credits": "CP8888",
           "texture": [
             "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/a320neo/xiamen.png"
-          ]
+          ],
+          "type_id": 1
         }
       ]
     },
@@ -296,7 +309,8 @@
           "credits": "TOMAIM",
           "texture": [
             "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/7m8/N234BE.png"
-          ]
+          ],
+          "type_id": 1
         }
       ]
     },
@@ -324,7 +338,8 @@
           "credits": "CP8888",
           "texture": [
             "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/78x/SQ.png"
-          ]
+          ],
+          "type_id": 1
         }
       ]
     },
@@ -366,7 +381,8 @@
           "credits": "CP8888",
           "texture": [
             "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/738/mandarin.png"
-          ]
+          ],
+          "type_id": 1
         }
       ]
     },
@@ -380,7 +396,8 @@
           "credits": "HO1796[Sino Wings Group]",
           "texture": [
             "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/saab340/UN.png"
-          ]
+          ],
+          "type_id": 1
         }
       ]
     },
@@ -419,7 +436,8 @@
           "texture": [
             "/models/aircraft/premium/a350/specular.jpg",
             "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/a359/World2fly.png"
-          ]
+          ],
+          "type_id": 1
         }
       ]
     },
@@ -440,7 +458,8 @@
           "credits": "CP8888",
           "texture": [
             "https://i.ibb.co/YTXHyFr5/Thaistar.png"
-          ]
+          ],
+          "type_id": 1
         }
       ]
     }
