@@ -1,6 +1,12 @@
 // ==UserScript==
-// @name         GeoFS liveries that has not been update
-// @match        *://*.geofs.com/*
+// @name         GeoFS-liveries-that-has-not-been-updated
+// @namespace    http://tampermonkey.net/
+// @version      1.0
+// @description  add some liveries
+// @author       chatGPT＆CP8888
+// @match        https://geo-fs.com/geofs.php*
+// @match        https://*.geo-fs.com/geofs.php*
+// @icon         https://www.google.com/s2/favicons?sz=64&domain=geo-fs.com
 // @grant        none
 // ==/UserScript==
 
