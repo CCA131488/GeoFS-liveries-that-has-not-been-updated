@@ -1,27 +1,23 @@
 // ==UserScript==
-// @name         GeoFS-liveries-that-has-not-been-updated
-// @namespace    http://tampermonkey.net/
-// @version      2026-03-21
-// @description  GeoFS-liveries-that-has-not-been-updated
-// @author       chatGPT＆CP8888
-// @match        https://www.geo-fs.com/geofs.php?v=3.9
-// @icon         https://www.google.com/s2/favicons?sz=64&domain=geo-fs.com
+// @name         GeoFS liveries that has not been update
+// @match        *://*.geofs.com/*
 // @grant        none
 // ==/UserScript==
 
 (function () {
     'use strict';
 
-    let panel, listContainer, searchInput;
+    let panel, listContainer, searchInput, filterSelect;
     let data;
     let lastAircraftId = null;
     let currentList = [];
+    let displayType = "all"; // Default to showing all liveries
 
-    const jsonUrl = "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/main/livery.json"; // Make sure this is the raw URL
+    const jsonUrl = "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/main/livery.json"; // raw json URL
 
-    // ===== Wait for GeoFS =====
+    // ===== Wait for GeoFS to load =====
     const wait = setInterval(() => {
-        if (window.geofs && geofs.aircraft?.instance) {
+        if (window.geofs && (window.LiverySelector || geofs.aircraft?.instance)) {
             clearInterval(wait);
             init();
         }
@@ -43,8 +39,10 @@
 
     // ===== Create UI =====
     function createUI() {
+        // Avoid creating the panel multiple times
         if (panel && document.body.contains(panel)) return;
 
+        // Create the container for the livery selection panel
         panel = document.createElement("div");
         Object.assign(panel.style, {
             position: "absolute",
@@ -58,7 +56,8 @@
             borderRadius: "10px",
             zIndex: 9999,
             display: "flex",
-            flexDirection: "column"
+            flexDirection: "column",
+            overflowY: "auto"
         });
 
         // Title
@@ -78,6 +77,19 @@
         searchInput.oninput = filterList;
         panel.appendChild(searchInput);
 
+        // Filter by type (Real or Virtual)
+        filterSelect = document.createElement("select");
+        filterSelect.innerHTML = `
+            <option value="all">All Liveries</option>
+            <option value="real">Real Liveries</option>
+            <option value="virtual">Virtual Liveries</option>
+        `;
+        filterSelect.onchange = (e) => {
+            displayType = e.target.value;
+            filterList();
+        };
+        panel.appendChild(filterSelect);
+
         // List Container (Scroll Area)
         listContainer = document.createElement("div");
         Object.assign(listContainer.style, {
@@ -87,16 +99,33 @@
         });
         panel.appendChild(listContainer);
 
+        // Append panel to the body
         document.body.appendChild(panel);
     }
 
-    // ===== Apply Livery (with Fallback - No LiverySelector) =====
+    // ===== Apply Livery (With Fallback) =====
     function applyLivery(livery) {
-
         const id = geofs.aircraft.instance.id;
-        const aircraft = geofs.aircraft.instance;
 
-        if (!aircraft) return;
+        // If LiverySelector exists, use it
+        if (window.LiverySelector) {
+            const airplane = window.LiverySelector.liveryobj.aircrafts[id];
+            if (airplane) {
+                console.log("Applying with LiverySelector:", livery.name);
+                window.LiverySelector.loadLivery(
+                    livery.texture,
+                    airplane.index,
+                    airplane.parts,
+                    livery.materials
+                );
+                return;
+            }
+        }
+
+        // Fallback: Apply directly using THREE.js
+        console.log("Applying without LiverySelector:", livery.name);
+        const aircraft = geofs.aircraft.instance;
+        if (!aircraft || !livery.texture) return;
 
         let i = 0;
         aircraft.object3d.traverse((child) => {
@@ -107,11 +136,9 @@
                 i++;
             }
         });
-
-        console.log("Applied:", livery.name);
     }
 
-    // ===== Gradient Effect =====
+    // ===== Gradient Effect (Shine) =====
     function addShineEffect(el) {
         const shine = document.createElement("div");
         Object.assign(shine.style, {
@@ -132,7 +159,7 @@
         el.onmouseleave = () => shine.style.opacity = "0";
     }
 
-    // ===== Render List =====
+    // ===== Render Livery List (With Filter) =====
     function renderList(list) {
         listContainer.innerHTML = "";
 
@@ -142,10 +169,14 @@
             // Avoid crashes if data is missing
             if (!livery || !livery.name || !livery.texture) return;
 
+            // If filter is applied, only show selected liveries
+            if (displayType !== "all" && data.livery_types[livery.type_id] !== displayType) return;
+
             const div = document.createElement("div");
             div.innerHTML = `
                 <div>${livery.name}</div>
                 <div style="font-size:10px;">by: ${livery.credits || "Unknown"}</div>
+                <div style="font-size:10px; color: gray;">(${data.livery_types[livery.type_id] === 'real' ? 'Real' : 'Virtual'})</div>
             `;
             Object.assign(div.style, {
                 cursor: "pointer",
@@ -156,7 +187,7 @@
 
             div.onclick = () => applyLivery(livery);
 
-            // Hover background
+            // Hover background effect
             div.onmouseenter = () => div.style.background = "rgba(255,255,255,0.1)";
             div.onmouseleave = () => div.style.background = "transparent";
 
