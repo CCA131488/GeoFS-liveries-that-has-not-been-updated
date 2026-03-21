@@ -376,7 +376,7 @@
       "parts": [0],
       "liveries": [
         {
-          "name": "UN,
+          "name": "UN",
           "credits": "HO1796[Sino Wings Group]",
           "texture": [
             "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/saab340/UN.png"
@@ -437,7 +437,7 @@
         },
         {
           "name": "Thai Airways (Star Alliance livery)",
-          "credits": "CP8888,
+          "credits": "CP8888",
           "texture": [
             "https://i.ibb.co/YTXHyFr5/Thaistar.png"
           ]
