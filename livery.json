@@ -1237,6 +1237,22 @@
             "https://raw.githubusercontent.com/CCA131488/livery/refs/heads/main/liveries/Airbus a300-600/Chinaairlines.png"
           ],
           "type_id": 1
+        },
+        {
+          "name": "DHL (Operated by Irish ASL Airlines)",
+          "credits": "CP8888",
+          "texture": [
+            "https://raw.githubusercontent.com/CCA131488/livery/refs/heads/main/liveries/Airbus a300-600/DHL_ASL.png"
+          ],
+          "type_id": 1
+        },
+        {
+          "name": "DHL (Operated by Air Hong Kong)",
+          "credits": "CNA1838",
+          "texture": [
+            "https://raw.githubusercontent.com/CCA131488/livery/refs/heads/main/liveries/Airbus a300-600/DHL_hongkong.png"
+          ],
+          "type_id": 1
         }
       ]
     }
