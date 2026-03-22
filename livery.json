@@ -1197,6 +1197,46 @@
             "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/refs/heads/main/liveries/a300/uni-top.png"
           ],
           "type_id": 1
+        },
+        {
+          "name": "China Southern Airlines",
+          "credits": "TOMAIM",
+          "texture": [
+            "https://raw.githubusercontent.com/CCA131488/livery/refs/heads/main/liveries/Airbus a300-600/Chinasouthern.png"
+          ],
+          "type_id": 1
+        },
+        {
+          "name": "China Southern Airlines (with SkyTeam Alliance logo)",
+          "credits": "TOMAIM",
+          "texture": [
+            "https://raw.githubusercontent.com/CCA131488/livery/refs/heads/main/liveries/Airbus a300-600/B-2323.png"
+          ],
+          "type_id": 1
+        },
+        {
+          "name": "China Southern Cargo Airlines",
+          "credits": "TOMAIM",
+          "texture": [
+            "https://raw.githubusercontent.com/CCA131488/livery/refs/heads/main/liveries/Airbus a300-600/Chinasoutherncargo.png"
+          ],
+          "type_id": 1
+        },
+        {
+          "name": "China Southern Cargo Airlines (with SkyTeam Alliance logo)",
+          "credits": "TOMAIM",
+          "texture": [
+            "https://raw.githubusercontent.com/CCA131488/livery/refs/heads/main/liveries/Airbus a300-600/B-2315.png"
+          ],
+          "type_id": 1
+        },
+        {
+          "name": "China Cargo Airlines",
+          "credits": "TOMAIM",
+          "texture": [
+            "https://raw.githubusercontent.com/CCA131488/livery/refs/heads/main/liveries/Airbus a300-600/Chinaairlines.png"
+          ],
+          "type_id": 1
         }
       ]
     }
