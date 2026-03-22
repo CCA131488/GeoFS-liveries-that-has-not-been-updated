@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         GeoFS-liveries-that-has-not-been-updated
 // @namespace    http://tampermonkey.net/
-// @version      1.0
+// @version      1.1
 // @description  add some liveries
-// @author       chatGPT＆CP8888
+// @author       ChatGPT & CP8888
 // @match        https://geo-fs.com/geofs.php*
 // @match        https://*.geo-fs.com/geofs.php*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=geo-fs.com
@@ -17,11 +17,10 @@
     let data;
     let lastAircraftId = null;
     let currentList = [];
-    let displayType = "all"; // Default to showing all liveries
+    let displayType = "all";
 
-    const jsonUrl = "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/main/livery.json"; // raw json URL
+    const jsonUrl = "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/main/livery.json";
 
-    // ===== Wait for GeoFS to load =====
     const wait = setInterval(() => {
         if (window.geofs && (window.LiverySelector || geofs.aircraft?.instance)) {
             clearInterval(wait);
@@ -43,12 +42,9 @@
         startLoop();
     }
 
-    // ===== Create UI =====
     function createUI() {
-        // Avoid creating the panel multiple times
         if (panel && document.body.contains(panel)) return;
 
-        // Create the container for the livery selection panel
         panel = document.createElement("div");
         Object.assign(panel.style, {
             position: "absolute",
@@ -66,12 +62,10 @@
             overflowY: "auto"
         });
 
-        // Title
         const title = document.createElement("div");
         title.innerHTML = "<b>Liveries</b>";
         panel.appendChild(title);
 
-        // Search Box
         searchInput = document.createElement("input");
         searchInput.placeholder = "Search...";
         Object.assign(searchInput.style, {
@@ -83,7 +77,6 @@
         searchInput.oninput = filterList;
         panel.appendChild(searchInput);
 
-        // Filter by type (Real or Virtual)
         filterSelect = document.createElement("select");
         filterSelect.innerHTML = `
             <option value="all">All Liveries</option>
@@ -96,7 +89,6 @@
         };
         panel.appendChild(filterSelect);
 
-        // List Container (Scroll Area)
         listContainer = document.createElement("div");
         Object.assign(listContainer.style, {
             marginTop: "8px",
@@ -105,19 +97,15 @@
         });
         panel.appendChild(listContainer);
 
-        // Append panel to the body
         document.body.appendChild(panel);
     }
 
-    // ===== Apply Livery (With Fallback) =====
     function applyLivery(livery) {
         const id = geofs.aircraft.instance.id;
 
-        // If LiverySelector exists, use it
         if (window.LiverySelector) {
             const airplane = window.LiverySelector.liveryobj.aircrafts[id];
             if (airplane) {
-                console.log("Applying with LiverySelector:", livery.name);
                 window.LiverySelector.loadLivery(
                     livery.texture,
                     airplane.index,
@@ -128,8 +116,6 @@
             }
         }
 
-        // Fallback: Apply directly using THREE.js
-        console.log("Applying without LiverySelector:", livery.name);
         const aircraft = geofs.aircraft.instance;
         if (!aircraft || !livery.texture) return;
 
@@ -144,7 +130,6 @@
         });
     }
 
-    // ===== Gradient Effect (Shine) =====
     function addShineEffect(el) {
         const shine = document.createElement("div");
         Object.assign(shine.style, {
@@ -165,17 +150,14 @@
         el.onmouseleave = () => shine.style.opacity = "0";
     }
 
-    // ===== Render Livery List (With Filter) =====
     function renderList(list) {
         listContainer.innerHTML = "";
 
-        const fragment = document.createDocumentFragment(); // ⭐ Improve performance
+        const fragment = document.createDocumentFragment();
 
         list.forEach(livery => {
-            // Avoid crashes if data is missing
             if (!livery || !livery.name || !livery.texture) return;
 
-            // If filter is applied, only show selected liveries
             if (displayType !== "all" && data.livery_types[livery.type_id] !== displayType) return;
 
             const div = document.createElement("div");
@@ -193,40 +175,53 @@
 
             div.onclick = () => applyLivery(livery);
 
-            // Hover background effect
             div.onmouseenter = () => div.style.background = "rgba(255,255,255,0.1)";
             div.onmouseleave = () => div.style.background = "transparent";
 
-            // Add gradient effect (only for a small number of liveries)
             if (list.length < 30) {
                 addShineEffect(div);
             }
 
-            // Add to fragment for better performance
             fragment.appendChild(div);
         });
 
         listContainer.appendChild(fragment);
     }
 
-    // ===== Filter List (Search) =====
     function filterList() {
         const keyword = searchInput.value.toLowerCase();
         const id = geofs.aircraft.instance.id;
         const ac = data.aircrafts[id];
-        if (!ac) return;
+
+        listContainer.innerHTML = "";
+
+        // ⭐ No livery case
+        if (!ac || !ac.liveries || ac.liveries.length === 0) {
+            const empty = document.createElement("div");
+            empty.innerText = "No liveries available for this aircraft";
+            Object.assign(empty.style, {
+                marginTop: "10px",
+                color: "gray",
+                textAlign: "center"
+            });
+            listContainer.appendChild(empty);
+            currentList = [];
+            return;
+        }
 
         currentList = ac.liveries
             .filter(l => {
-                const matchKeyword = l.name.toLowerCase().includes(keyword) || (l.credits || "").toLowerCase().includes(keyword);
-                return matchKeyword;
+                return (
+                    l.name.toLowerCase().includes(keyword) ||
+                    (l.credits || "").toLowerCase().includes(keyword)
+                );
             })
-            .sort((a, b) => a.name.localeCompare(b.name));
+            // ⭐ Force alphabetical order
+            .sort((a, b) => a.name.localeCompare(b.name, 'en', { sensitivity: 'base' }));
 
         renderList(currentList);
     }
 
-    // ===== Main Loop (for updates) =====
     function startLoop() {
         setInterval(() => {
             if (!panel || !document.body.contains(panel)) createUI();
@@ -240,7 +235,6 @@
         }, 1000);
     }
 
-    // ===== Handle SHIFT Key (UI Toggle) =====
     document.addEventListener("keydown", (e) => {
         if (e.key === "Shift") {
             panel.style.display = panel.style.display === "none" ? "flex" : "none";
