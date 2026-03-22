@@ -5,3 +5,6 @@ This section contains all the unupdated liveries created by me and my friends. I
 # How do I run the plugin?
 1. open [main.js](https://github.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/blob/main/main.js), copy, and paste to geofs.
 2. Save to [Tampermonkey](https://www.tampermonkey.net/?locale=zh).
+
+When you use this plugin, press Shift to hide it.
+**If you have an idea for making a plugin better, feel free to ask it in the [issues](https://github.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/issues).**
