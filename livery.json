@@ -861,6 +861,15 @@
             "https://raw.githubusercontent.com/CCA131488/livery/refs/heads/main/liveries/Boeing_b777-200f/Chinapostal.png"
           ],
           "type_id": 1
+        },
+        {
+          "name": "DHL (Operated by AeroLogic)",
+          "credits": "CP8888",
+          "texture": [
+            "https://raw.githubusercontent.com/kolos26/GEOFS-LiverySelector/main/liveries/boeing_b777-200f/shaders/original.png",
+            "https://raw.githubusercontent.com/CCA131488/livery/refs/heads/main/liveries/Boeing_b777-200f/AeroLogic_DHL.png"
+          ],
+          "type_id": 1
         }
       ]
     },
@@ -1157,6 +1166,14 @@
       "index": [0],
       "parts": [0],
       "liveries": [
+        {
+          "name": "China Eastern Airlines",
+          "credits": "TOMAIM",
+          "texture": [
+            "https://raw.githubusercontent.com/CCA131488/livery/refs/heads/main/liveries/Airbus a300-600/Chinaeastern.png"
+          ],
+          "type_id": 1
+        },
         {
           "name": "China Northern Airlines",
           "credits": "CNA1838",
