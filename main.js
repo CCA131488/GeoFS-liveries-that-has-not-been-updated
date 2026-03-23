@@ -1,12 +1,11 @@
 // ==UserScript==
 // @name         GeoFS-liveries-that-has-not-been-updated
 // @namespace    http://tampermonkey.net/
-// @version      1.1
-// @description  add some liveries
+// @version      1.2
+// @description  Add some liveries
 // @author       ChatGPT & CP8888
 // @match        https://geo-fs.com/geofs.php*
 // @match        https://*.geo-fs.com/geofs.php*
-// @icon         https://www.google.com/s2/favicons?sz=64&domain=geo-fs.com
 // @grant        none
 // ==/UserScript==
 
@@ -29,7 +28,7 @@
     }, 1000);
 
     async function init() {
-        console.log("✅ Plugin Loaded");
+        console.log("✅ Plugin Loaded v1.2");
 
         try {
             data = await fetch(jsonUrl).then(r => r.json());
@@ -59,12 +58,45 @@
             zIndex: 9999,
             display: "flex",
             flexDirection: "column",
-            overflowY: "auto"
+            overflowY: "auto",
+            cursor: "move"
+        });
+
+        // ⭐ Draggable functionality
+        let isDragging = false;
+        let offsetX, offsetY;
+
+        panel.addEventListener("mousedown", (e) => {
+            isDragging = true;
+            offsetX = e.clientX - panel.offsetLeft;
+            offsetY = e.clientY - panel.offsetTop;
+        });
+
+        document.addEventListener("mousemove", (e) => {
+            if (isDragging) {
+                panel.style.left = (e.clientX - offsetX) + "px";
+                panel.style.top = (e.clientY - offsetY) + "px";
+                panel.style.right = "auto";
+            }
+        });
+
+        document.addEventListener("mouseup", () => {
+            isDragging = false;
         });
 
         const title = document.createElement("div");
         title.innerHTML = "<b>Liveries</b>";
         panel.appendChild(title);
+
+        // ⭐ Hint message
+        const hint = document.createElement("div");
+        hint.innerText = "press Shift to hide it";
+        Object.assign(hint.style, {
+            fontSize: "12px",
+            opacity: "0.7",
+            marginBottom: "5px"
+        });
+        panel.appendChild(hint);
 
         searchInput = document.createElement("input");
         searchInput.placeholder = "Search...";
@@ -130,26 +162,6 @@
         });
     }
 
-    function addShineEffect(el) {
-        const shine = document.createElement("div");
-        Object.assign(shine.style, {
-            position: "absolute", top: "0", left: "0",
-            width: "100%", height: "100%",
-            pointerEvents: "none", opacity: "0", transition: "0.2s"
-        });
-        el.style.position = "relative";
-        el.style.overflow = "hidden";
-        el.appendChild(shine);
-        el.addEventListener("mousemove", (e) => {
-            const r = el.getBoundingClientRect();
-            const x = e.clientX - r.left;
-            const y = e.clientY - r.top;
-            shine.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255,255,255,0.5), transparent 60%)`;
-        });
-        el.onmouseenter = () => shine.style.opacity = "1";
-        el.onmouseleave = () => shine.style.opacity = "0";
-    }
-
     function renderList(list) {
         listContainer.innerHTML = "";
 
@@ -163,9 +175,10 @@
             const div = document.createElement("div");
             div.innerHTML = `
                 <div>${livery.name}</div>
-                <div style="font-size:10px;">by: ${livery.credits || "Unknown"}</div>
+                <div style="font-size:12px; opacity:0.7;">by: ${livery.credits || "Unknown"}</div> <!-- Unified style -->
                 <div style="font-size:10px; color: gray;">(${data.livery_types[livery.type_id] === 'real' ? 'Real' : 'Virtual'})</div>
             `;
+
             Object.assign(div.style, {
                 cursor: "pointer",
                 marginTop: "6px",
@@ -175,12 +188,12 @@
 
             div.onclick = () => applyLivery(livery);
 
-            div.onmouseenter = () => div.style.background = "rgba(255,255,255,0.1)";
+            div.onmouseenter = () => {
+                div.style.background = "rgba(255,255,255,0.1)";
+                // ⭐ Add gradient effect on hover
+                div.style.background = "radial-gradient(circle, rgba(255,255,255,0.5), transparent)";
+            };
             div.onmouseleave = () => div.style.background = "transparent";
-
-            if (list.length < 30) {
-                addShineEffect(div);
-            }
 
             fragment.appendChild(div);
         });
@@ -195,7 +208,6 @@
 
         listContainer.innerHTML = "";
 
-        // ⭐ No livery case
         if (!ac || !ac.liveries || ac.liveries.length === 0) {
             const empty = document.createElement("div");
             empty.innerText = "No liveries available for this aircraft";
@@ -210,14 +222,13 @@
         }
 
         currentList = ac.liveries
-            .filter(l => {
-                return (
-                    l.name.toLowerCase().includes(keyword) ||
-                    (l.credits || "").toLowerCase().includes(keyword)
-                );
-            })
-            // ⭐ Force alphabetical order
-            .sort((a, b) => a.name.localeCompare(b.name, 'en', { sensitivity: 'base' }));
+            .filter(l =>
+                l.name.toLowerCase().includes(keyword) ||
+                (l.credits || "").toLowerCase().includes(keyword)
+            )
+            .sort((a, b) =>
+                a.name.localeCompare(b.name, 'en', { sensitivity: 'base' })
+            );
 
         renderList(currentList);
     }
