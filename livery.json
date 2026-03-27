@@ -1272,6 +1272,22 @@
           "type_id": 1
         }
       ]
+    },
+    "1004": {
+      "name": "Boeing b777-200LR",
+      "index": [0],
+      "parts": [0],
+      "liveries": [
+        {
+          "name": "Emirates",
+          "credits": "CP8888",
+          "texture": [
+            "https://raw.githubusercontent.com/kolos26/GEOFS-LiverySelector/main/liveries/boeing_b777-200lr/shaders/original.png",
+            "https://raw.githubusercontent.com/CCA131488/livery/refs/heads/main/liveries/Boeing_b777-200lr/Emirates.png"
+          ],
+          "type_id": 1
+        }
+      ]
     }
   }
 }
