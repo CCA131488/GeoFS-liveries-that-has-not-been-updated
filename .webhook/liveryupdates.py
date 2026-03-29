@@ -45,29 +45,23 @@ for plane, plane_data in new_json.get("aircrafts", {}).items():
 embed_color = int("242429", 16)
 
 if diff_data:
-    webhook = DiscordWebhook(url=LIVERY_UPDATE_WEBHOOK)
-    embed = DiscordEmbed(title="Livery Updates", color=embed_color)
-    webhook.add_embed(embed)
-    webhook.execute()
-
-    for plane in diff_data:
+    for i, plane in enumerate(diff_data):
         webhook = DiscordWebhook(url=LIVERY_UPDATE_WEBHOOK)
-        embed = DiscordEmbed(color=embed_color)
+        embed = DiscordEmbed(title="livery updates", color=embed_color)
         livery_list = ""
         for l in plane["addition"]:
             try:
                 livery_list += f'{l["name"]} *by: {l.get("credits","??")}*\n'
             except:
                 livery_list += f'{l["name"]} *by: ??*\n'
+
+        # 如果是最后一条 embed，加上总数
+        if i == len(diff_data) - 1:
+            livery_list += f"\n**Total: {emoji_number(total)}**"
+
         embed.add_embed_field(name=plane["name"], value=livery_list.strip(), inline=False)
         webhook.add_embed(embed)
         webhook.execute()
-
-    webhook = DiscordWebhook(url=LIVERY_UPDATE_WEBHOOK)
-    embed = DiscordEmbed(title="Total New Liveries", color=embed_color)
-    embed.add_embed_field(name="Number of new liveries", value=emoji_number(total), inline=False)
-    webhook.add_embed(embed)
-    webhook.execute()
 else:
     print("No new liveries found.")
 
