@@ -63,7 +63,3 @@ if diff_data:
     webhook.execute()
 else:
     print("No new liveries found.")
-
-os.makedirs(".webhook", exist_ok=True)
-with open(".webhook/commit.txt", "w") as f:
-    f.write(os.environ.get("GITHUB_SHA", "main"))
