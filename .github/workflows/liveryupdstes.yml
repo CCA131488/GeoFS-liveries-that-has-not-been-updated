@@ -13,10 +13,15 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Create commit.txt
+      - name: Save latest commit ID
         run: |
           mkdir -p .webhook
           echo "${{ github.sha }}" > .webhook/commit.txt
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add .webhook/commit.txt
+          git commit -m "Update commit.txt"
+          git push origin main
 
       - name: Install dependencies
         run: pip install discord-webhook requests
