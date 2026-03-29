@@ -16,18 +16,19 @@ jobs:
 
       - name: Fetch latest livery.json
         run: |
+          # 从主分支获取最新文件
           curl -s -o new_livery.json https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/main/livery.json
-          curl -s -o old_livery.json https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/${{ github.sha }}/livery.json
+          # 当前仓库里文件
+          cp livery.json old_livery.json
 
       - name: Send Discord Embed
         env:
-          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          DISCORD_WEBHOOK: ${{ secrets.liveryupdates }}
         run: |
           python3 - <<'EOF'
 import json
 import requests
 
-# Helper: Discord number emojis
 num_map = {0: ':zero:', 1: ':one:', 2: ':two:', 3: ':three:', 4: ':four:',
            5: ':five:', 6: ':six:', 7: ':seven:', 8: ':eight:', 9: ':nine:'}
 
@@ -55,13 +56,13 @@ for plane, plane_data in new_json['aircrafts'].items():
 if not diff_data:
     print("No new liveries found.")
 else:
-    webhook_url = '${{ secrets.DISCORD_WEBHOOK }}'
+    webhook_url = '${{ secrets.liveryupdates }}'
     for plane in diff_data:
         embed = {
             "username": "livery updates",
             "embeds": [{
                 "title": plane['name'],
-                "color": 25405E,
+                "color": 0x25405E,
                 "fields": [{
                     "name": "New liveries",
                     "value": '\n'.join(f"{l['name']} *by: {l.get('credits','??')}*" for l in plane['addition']),
@@ -71,12 +72,11 @@ else:
         }
         requests.post(webhook_url, json=embed)
 
-    # Total count as separate embed
     embed_total = {
         "username": "livery updates",
         "embeds": [{
             "title": "Total",
-            "color": 25405E,
+            "color": 0x25405E,
             "fields": [{
                 "name": "Number of new liveries",
                 "value": f"{emoji_number(total_count)}",
