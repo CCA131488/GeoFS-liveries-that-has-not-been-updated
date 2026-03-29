@@ -539,7 +539,7 @@
       "parts": [0, 0],
       "liveries": [
         {
-          "name": "Korean Air (200th Boeing Aircraft livery)",
+          "name": "Korean Air (200th Boeing Aircraft tick)",
           "credits": "CP8888 ＆ KN5290",
           "texture": [
             "/models/aircraft/premium/777_300/specular_0.jpg",
