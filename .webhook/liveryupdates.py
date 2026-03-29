@@ -6,7 +6,6 @@ from discord_webhook import DiscordWebhook, DiscordEmbed
 LIVERY_UPDATE_WEBHOOK = os.environ["LIVERYUPDATES"]
 
 commit_file = ".webhook/commit.txt"
-
 if os.path.exists(commit_file):
     with open(commit_file, "r") as f:
         old_commit_id = f.read().strip()
@@ -45,23 +44,23 @@ for plane, plane_data in new_json.get("aircrafts", {}).items():
 embed_color = int("242429", 16)
 
 if diff_data:
-    for i, plane in enumerate(diff_data):
-        webhook = DiscordWebhook(url=LIVERY_UPDATE_WEBHOOK)
-        embed = DiscordEmbed(title="livery updates", color=embed_color)
+    webhook = DiscordWebhook(url=LIVERY_UPDATE_WEBHOOK)
+    embed = DiscordEmbed(title="livery updates", color=embed_color)
+
+    for plane in diff_data:
         livery_list = ""
         for l in plane["addition"]:
             try:
                 livery_list += f'{l["name"]} *by: {l.get("credits","??")}*\n'
             except:
                 livery_list += f'{l["name"]} *by: ??*\n'
-
-        # 如果是最后一条 embed，加上总数
-        if i == len(diff_data) - 1:
-            livery_list += f"\n**Total: {emoji_number(total)}**"
-
         embed.add_embed_field(name=plane["name"], value=livery_list.strip(), inline=False)
-        webhook.add_embed(embed)
-        webhook.execute()
+
+    # 最后一行显示总数
+    embed.add_embed_field(name="Total new liveries", value=emoji_number(total), inline=False)
+
+    webhook.add_embed(embed)
+    webhook.execute()
 else:
     print("No new liveries found.")
 
