@@ -38,7 +38,7 @@ for plane, plane_data in new_json.get("aircrafts", {}).items():
 
 if diff_data:
     webhook = DiscordWebhook(url=LIVERY_UPDATE_WEBHOOK)
-    embed = DiscordEmbed(title="New Livery Updates", color="25405E")
+    embed = DiscordEmbed(title="livery updates", color="25405E")
     webhook.add_embed(embed)
     webhook.execute()
 
