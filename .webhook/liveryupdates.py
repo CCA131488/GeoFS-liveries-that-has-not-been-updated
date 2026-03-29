@@ -25,6 +25,12 @@ if old_commit_id:
 else:
     old_json = {"aircrafts": {}}
 
+num_map = {0: ":zero:", 1: ":one:", 2: ":two:", 3: ":three:", 4: ":four:",
+           5: ":five:", 6: ":six:", 7: ":seven:", 8: ":eight:", 9: ":nine:"}
+
+def emoji_number(n):
+    return ''.join(num_map[int(d)] for d in str(n))
+
 diff_data = []
 total = 0
 for plane, plane_data in new_json.get("aircrafts", {}).items():
@@ -36,15 +42,17 @@ for plane, plane_data in new_json.get("aircrafts", {}).items():
         diff_data.append({"name": plane_data.get("name", plane), "addition": addition})
         total += len(addition)
 
+embed_color = int("242429", 16)
+
 if diff_data:
     webhook = DiscordWebhook(url=LIVERY_UPDATE_WEBHOOK)
-    embed = DiscordEmbed(title="livery updates", color="25405E")
+    embed = DiscordEmbed(title="Livery Updates", color=embed_color)
     webhook.add_embed(embed)
     webhook.execute()
 
     for plane in diff_data:
         webhook = DiscordWebhook(url=LIVERY_UPDATE_WEBHOOK)
-        embed = DiscordEmbed(color="25405E")
+        embed = DiscordEmbed(color=embed_color)
         livery_list = ""
         for l in plane["addition"]:
             try:
@@ -56,13 +64,13 @@ if diff_data:
         webhook.execute()
 
     webhook = DiscordWebhook(url=LIVERY_UPDATE_WEBHOOK)
-    embed = DiscordEmbed(title=f"Total new liveries: {total}", color="25405E")
+    embed = DiscordEmbed(title="Total New Liveries", color=embed_color)
+    embed.add_embed_field(name="Number of new liveries", value=emoji_number(total), inline=False)
     webhook.add_embed(embed)
     webhook.execute()
 else:
     print("No new liveries found.")
 
-# 保存最新 commit ID 用于下次对比
 os.makedirs(".webhook", exist_ok=True)
 with open(".webhook/commit.txt", "w") as f:
     f.write(os.environ.get("GITHUB_SHA", "main"))
