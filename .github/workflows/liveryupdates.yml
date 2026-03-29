@@ -1,4 +1,4 @@
-name: livery Updates
+name: Livery Updates
 
 on:
   push:
@@ -18,8 +18,13 @@ jobs:
         run: |
           # 从主分支获取最新文件
           curl -s -o new_livery.json https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/main/livery.json
-          # 当前仓库里文件
-          cp livery.json old_livery.json
+          
+          # 如果仓库里已有 livery.json 就用作旧文件，否则创建空旧文件
+          if [ -f livery.json ]; then
+            cp livery.json old_livery.json
+          else
+            echo '{"aircrafts":{}}' > old_livery.json
+          fi
 
       - name: Send Discord Embed
         env:
@@ -53,9 +58,7 @@ for plane, plane_data in new_json['aircrafts'].items():
         diff_data.append({'name': plane_data.get('name', plane), 'addition': addition})
         total_count += len(addition)
 
-if not diff_data:
-    print("No new liveries found.")
-else:
+if diff_data:
     webhook_url = '${{ secrets.liveryupdates }}'
     for plane in diff_data:
         embed = {
@@ -85,4 +88,15 @@ else:
         }]
     }
     requests.post(webhook_url, json=embed_total)
+else:
+    print("No new liveries found.")
 EOF
+
+      - name: Update livery.json in repository
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          cp new_livery.json livery.json
+          git add livery.json
+          git commit -m "Update livery.json"
+          git push origin main
