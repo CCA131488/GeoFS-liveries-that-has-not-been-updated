@@ -25,6 +25,7 @@ num_map = {0: ":zero:", 1: ":one:", 2: ":two:", 3: ":three:", 4: ":four:",
 def emoji_number(n):
     return ''.join(num_map[int(d)] for d in str(n))
 
+# 找出新增的涂装
 diff_data = []
 total = 0
 for plane, plane_data in new_json.get("aircrafts", {}).items():
@@ -38,6 +39,7 @@ for plane, plane_data in new_json.get("aircrafts", {}).items():
 
 embed_color = int("242429", 16)
 
+# 如果有新增涂装，发送消息
 if diff_data:
     # 标题 embed
     webhook = DiscordWebhook(url=LIVERY_UPDATE_WEBHOOK)
@@ -45,7 +47,7 @@ if diff_data:
     webhook.add_embed(embed)
     webhook.execute()
 
-    # 每个机型 embed
+    # 仅发送有新增涂装的机型
     for plane in diff_data:
         webhook = DiscordWebhook(url=LIVERY_UPDATE_WEBHOOK)
         embed = DiscordEmbed(color=embed_color)
@@ -56,7 +58,7 @@ if diff_data:
         webhook.add_embed(embed)
         webhook.execute()
 
-    # Total embed
+    # 最后一条 embed 显示 Total
     webhook = DiscordWebhook(url=LIVERY_UPDATE_WEBHOOK)
     embed = DiscordEmbed(title="Total", color=embed_color)
     embed.add_embed_field(name="Number of new liveries", value=emoji_number(total), inline=False)
