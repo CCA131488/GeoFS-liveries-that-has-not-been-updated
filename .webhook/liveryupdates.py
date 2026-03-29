@@ -6,11 +6,8 @@ from discord_webhook import DiscordWebhook, DiscordEmbed
 LIVERY_UPDATE_WEBHOOK = os.environ["LIVERYUPDATES"]
 
 commit_file = ".webhook/commit.txt"
-if os.path.exists(commit_file):
-    with open(commit_file, "r") as file:
-        old_commit_id = file.read().strip()
-else:
-    old_commit_id = None
+with open(commit_file, "r") as file:
+    old_commit_id = file.read().strip()
 
 new_json_url = "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/main/livery.json"
 new_json = json.loads(requests.get(new_json_url).content)
@@ -32,20 +29,17 @@ for plane, plane_data in new_json.get("aircrafts", {}).items():
         if livery not in old_json.get("aircrafts", {}).get(plane, {}).get("liveries", []):
             addition.append(livery)
     if addition:
-        diff_data.append({
-            "name": plane_data.get("name", plane),
-            "addition": addition
-        })
+        diff_data.append({"name": plane_data.get("name", plane), "addition": addition})
         total += len(addition)
 
 if diff_data:
-    webhook = DiscordWebhook(url=LIVERY_UPDATE_WEBHOOK)
+    webhook = DiscordWebhook(url=LIVERYUPDATES)
     embed = DiscordEmbed(title="New Livery Updates", color="25405E")
     webhook.add_embed(embed)
     webhook.execute()
 
     for plane in diff_data:
-        webhook = DiscordWebhook(url=LIVERY_UPDATE_WEBHOOK)
+        webhook = DiscordWebhook(url=LIVERYUPDATES)
         embed = DiscordEmbed(color="25405E")
         livery_list = ""
         for l in plane["addition"]:
@@ -57,7 +51,7 @@ if diff_data:
         webhook.add_embed(embed)
         webhook.execute()
 
-    webhook = DiscordWebhook(url=LIVERY_UPDATE_WEBHOOK)
+    webhook = DiscordWebhook(url=LIVERYUPDATES)
     embed = DiscordEmbed(title=f"Total new liveries: {total}", color="25405E")
     webhook.add_embed(embed)
     webhook.execute()
