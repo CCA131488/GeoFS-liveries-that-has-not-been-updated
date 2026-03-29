@@ -5,7 +5,7 @@
   },
   "aircrafts": {
     "4": {
-      "name": "Boeing b737-700",
+      "name": "Boeing B737-700",
       "index": [0, 2, 3],
       "parts": [0, 0, 0],
       "liveries": [
@@ -22,7 +22,7 @@
       ]
     },
     "237": {
-      "name": "Boeing b767-300ER",
+      "name": "Boeing B767-300ER",
       "index": [0, 0, 0, 0, 0, 0, 0, 0, 0],
       "parts": [0, 23, 27, 28, 29, 30, 31, 32, 36],
       "liveries": [
@@ -45,7 +45,7 @@
       ]
     },
     "238": {
-      "name": "Boeing b757-200",
+      "name": "Boeing B757-200",
       "index": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
       "parts": [0, 9, 23, 24, 25, 26, 27, 28, 29, 30, 37],
       "liveries": [
@@ -70,7 +70,7 @@
       ]
     },
     "2879": {
-      "name": "Airbus a319-100",
+      "name": "Airbus A319-100",
       "index": [0],
       "parts": [0],
       "liveries": [
@@ -109,7 +109,7 @@
       ]
     },
     "2973": {
-      "name": "Airbus a350-1000",
+      "name": "Airbus A350-1000",
       "index": [0],
       "parts": [0],
       "liveries": [
@@ -140,7 +140,7 @@
       ]
     },
     "3575": {
-      "name": "Boeing b787-9",
+      "name": "Boeing B787-9",
       "index": [0],
       "parts": [0],
       "liveries": [
@@ -195,7 +195,7 @@
       ]
     },
     "3534": {
-      "name": "Airbus a320-214",
+      "name": "Airbus A320-214",
       "index": [0],
       "parts": [0],
       "liveries": [
@@ -210,7 +210,7 @@
       ]
     },
     "2871": {
-      "name": "Airbus a320neo",
+      "name": "Airbus A320neo",
       "index": [0],
       "parts": [0],
       "liveries": [
@@ -273,7 +273,7 @@
       ]
     },
     "2769": {
-      "name": "Boeing b737-max8",
+      "name": "Boeing B737-max8",
       "index": [0],
       "parts": [0],
       "liveries": [
@@ -336,7 +336,7 @@
       ]
     },
     "3180": {
-      "name": "Boeing b787-10",
+      "name": "Boeing B787-10",
       "index": [0],
       "parts": [0],
       "liveries": [
@@ -367,7 +367,7 @@
       ]
     },
     "3054": {
-      "name": "Boeing b737-800",
+      "name": "Boeing B737-800",
       "index": [0],
       "parts": [0],
       "liveries": [
@@ -429,7 +429,7 @@
       ]
     },
     "24": {
-      "name": "Airbus a350-900",
+      "name": "Airbus A350-900",
       "index": [2, 3],
       "parts": [0, 0],
       "liveries": [
@@ -472,7 +472,7 @@
       ]
     },
     "4631": {
-      "name": "Airbus a330-900neo",
+      "name": "Airbus A330-900neo",
       "index": [0],
       "parts": [0],
       "liveries": [
@@ -495,7 +495,7 @@
       ]
     },
     "4646": {
-      "name": "Airbus a321neo",
+      "name": "Airbus A321neo",
       "index": [0],
       "parts": [0],
       "liveries": [
@@ -534,7 +534,7 @@
       ]
     },
     "25": {
-      "name": "Boeing b777-300ER",
+      "name": "Boeing B777-300ER",
       "index": [2, 3],
       "parts": [0, 0],
       "liveries": [
@@ -559,7 +559,7 @@
       ]
     },
     "4764": {
-      "name": "Boeing b767-400ER",
+      "name": "Boeing B767-400ER",
       "index": [0],
       "parts": [0],
       "liveries": [
@@ -574,7 +574,7 @@
       ]
     },
     "5086": {
-      "name": "Airbus a321-211",
+      "name": "Airbus A321-211",
       "index": [0],
       "parts": [0],
       "liveries": [
@@ -629,7 +629,7 @@
       ]
     },
     "2856": {
-      "name": "Airbus a330-200",
+      "name": "Airbus A330-200",
       "index": [0],
       "parts": [0],
       "liveries": [
@@ -692,7 +692,7 @@
       ]
     },
     "5203": {
-      "name": "Boeing b737-600",
+      "name": "Boeing B737-600",
       "index": [0],
       "parts": [0],
       "liveries": [
@@ -707,7 +707,7 @@
       ]
     },
     "3011": {
-      "name": "Airbus a320-232",
+      "name": "Airbus A320-232",
       "index": [0],
       "parts": [0],
       "liveries": [
@@ -778,7 +778,7 @@
       ]
     },
     "240": {
-      "name": "Boeing b777-200",
+      "name": "Boeing B777-200",
       "index": [1, 0],
       "parts": [0, 0],
       "liveries": [
@@ -812,7 +812,7 @@
       ]
     },
     "4402": {
-      "name": "Boeing b777-200f",
+      "name": "Boeing B777-200f",
       "index": [1, 0],
       "parts": [0, 0],
       "liveries": [
@@ -882,7 +882,7 @@
       ]
     },
     "1018": {
-      "name": "Embraer erj190",
+      "name": "Embraer ERJ190",
       "index": [3, 5, 6],
       "parts": [1, 1, 1],
       "liveries": [
@@ -899,7 +899,7 @@
       ]
     },
     "252": {
-      "name": "Embraer erj190",
+      "name": "Boeing B747-8f",
       "index": [0],
       "parts": [0],
       "liveries": [
@@ -922,7 +922,7 @@
       ]
     },
     "5551": {
-      "name": "Comac c919",
+      "name": "Comac C919",
       "index": [0, 2, 3],
       "parts": [0, 0, 0],
       "liveries": [
@@ -937,7 +937,7 @@
       ]
     },
     "5527": {
-      "name": "Boeing b747-400",
+      "name": "Boeing B747-400",
       "index": [0, 1],
       "parts": [0, 0],
       "liveries": [
@@ -1088,7 +1088,7 @@
       ]
     },
     "5847": {
-      "name": "Airbus a319neo",
+      "name": "Airbus A319neo",
       "index": [0],
       "parts": [0],
       "liveries": [
@@ -1127,7 +1127,7 @@
       ]
     },
     "1005": {
-      "name": "Boeing b777-9x",
+      "name": "Boeing B777-9x",
       "index": [0, 1, 2],
       "parts": [0, 0, 0],
       "liveries": [
@@ -1144,7 +1144,7 @@
       ]
     },
     "5566": {
-      "name": "Embraer erj175",
+      "name": "Embraer ERJ175",
       "index": [2, 5, 6, 7, 8, 9],
       "parts": [0, 0, 0, 0, 0, 0],
       "liveries": [
@@ -1164,7 +1164,7 @@
       ]
     },
     "5211": {
-      "name": "Boeing b747SP",
+      "name": "Boeing B747sp",
       "index": [0],
       "parts": [0],
       "liveries": [
@@ -1179,7 +1179,7 @@
       ]
     },
     "1009": {
-      "name": "Airbus a300-600",
+      "name": "Airbus A300-600",
       "index": [0],
       "parts": [0],
       "liveries": [
@@ -1274,7 +1274,7 @@
       ]
     },
     "1004": {
-      "name": "Boeing b777-200LR",
+      "name": "Boeing B777-200LR",
       "index": [0],
       "parts": [0],
       "liveries": [
