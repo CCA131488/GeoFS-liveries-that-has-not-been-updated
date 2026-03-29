@@ -1,0 +1,27 @@
+name: Livery Updates
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  send-message:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Create commit.txt
+        run: |
+          mkdir -p .webhook
+          echo "${{ github.sha }}" > .webhook/commit.txt
+
+      - name: Install dependencies
+        run: pip install discord-webhook requests
+
+      - name: Run Discord webhook script
+        env:
+          LIVERYUPDATES: ${{ secrets.LIVERYUPDATES }}
+        run: python3 .webhook/liveryupdates.py
