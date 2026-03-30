@@ -1,23 +1,44 @@
-name: Livery Updates
+name: livery updates
 
 on:
   push:
-    branches:
-      - main
+    paths:
+      - livery.json
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
-  send-message:
+  send:
+    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-      - name: Install dependencies
-        run: pip install discord-webhook requests
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.11
 
-      - name: Run Discord webhook script
+      - name: Install deps
+        run: pip install -r .webhook/requirements.txt
+
+      - name: Run script
         env:
           LIVERYUPDATES: ${{ secrets.LIVERYUPDATES }}
-          GITHUB_SHA: ${{ github.sha }}
-        run: python3 .webhook/liveryupdates.py
+        run: python3 .webhook/livery_update.py
+
+      - name: Save commit
+        run: |
+          mkdir -p .webhook
+          echo "${{ github.sha }}" > .webhook/commit.txt
+
+      - name: Commit commit.txt
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add .webhook/commit.txt
+          git commit -m "update commit.txt" || echo "no changes"
+          git push
