@@ -1,4 +1,4 @@
-name: livery Updates
+name: livery update
 
 on:
   push:
