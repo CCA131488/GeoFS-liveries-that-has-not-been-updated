@@ -7,12 +7,14 @@ WEBHOOK = os.environ["LIVERYUPDATES"]
 
 commit_file = ".webhook/commit.txt"
 
+# 读取 commit.txt 获取上次的 commit id
 if os.path.exists(commit_file):
     with open(commit_file, "r") as f:
         commit_id = f.read().strip()
 else:
     commit_id = None
 
+# 获取最新的 livery.json 和旧版本的 livery.json
 new_json = json.loads(requests.get(
     "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/main/livery.json"
 ).content)
@@ -27,6 +29,7 @@ if commit_id:
 else:
     old_json = {"aircrafts": {}}
 
+# 数字表情映射
 num_map = {
     "0": ":zero:", "1": ":one:", "2": ":two:", "3": ":three:", "4": ":four:",
     "5": ":five:", "6": ":six:", "7": ":seven:", "8": ":eight:", "9": ":nine:"
@@ -35,6 +38,7 @@ num_map = {
 def emoji_number(n):
     return ''.join(num_map[d] for d in str(n))
 
+# 查找新增的涂装
 diff_data = []
 total = 0
 
@@ -52,8 +56,10 @@ for plane, plane_data in new_json["aircrafts"].items():
         })
         total += len(addition)
 
+# 使用纯色 #242429
 color = int("242429", 16)
 
+# 如果有新增涂装，发送到 Discord
 if diff_data:
     webhook = DiscordWebhook(url=WEBHOOK)
     embed = DiscordEmbed(title="livery update", color=color)
@@ -72,6 +78,7 @@ if diff_data:
         webhook.add_embed(embed)
         webhook.execute()
 
+    # 添加 Total 数字的 embed
     webhook = DiscordWebhook(url=WEBHOOK)
     embed = DiscordEmbed(title="Total", color=color)
     embed.add_embed_field(name="Number of new liveries", value=emoji_number(total), inline=False)
@@ -80,3 +87,8 @@ if diff_data:
 
 else:
     print("No new liveries found.")
+
+# 更新 commit.txt
+os.makedirs(".webhook", exist_ok=True)
+with open(".webhook/commit.txt", "w") as f:
+    f.write(os.environ.get("GITHUB_SHA", "main"))
