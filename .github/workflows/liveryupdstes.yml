@@ -1,13 +1,10 @@
-name: livery updates
+name: livery Updates
 
 on:
   push:
     paths:
       - livery.json
   workflow_dispatch:
-
-permissions:
-  contents: write
 
 jobs:
   send:
@@ -35,7 +32,7 @@ jobs:
           mkdir -p .webhook
           echo "${{ github.sha }}" > .webhook/commit.txt
 
-      - name: Commit commit.txt
+      - name: Commit and push commit.txt
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@users.noreply.github.com"
