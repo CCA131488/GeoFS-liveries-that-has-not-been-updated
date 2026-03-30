@@ -1,3 +1,0 @@
-git
-json
-discord_webhook
