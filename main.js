@@ -1,9 +1,9 @@
 // ==UserScript==
-// @name         GeoFS-liveries-that-has-not-been-updated
+// @name         GeoFS-liveries
 // @namespace    http://tampermonkey.net/
 // @version      1.2
 // @description  Add some liveries
-// @author       ChatGPT & CP8888
+// @author       CP8888 & chatGPT
 // @match        https://geo-fs.com/geofs.php*
 // @match        https://*.geo-fs.com/geofs.php*
 // @grant        none
