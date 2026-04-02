@@ -169,14 +169,6 @@
           "type_id": 1
         },
         {
-          "name": "China Southern Airlines",
-          "credits": "開飛機のzm[Sino Wings Group] ＆ TOMAIM",
-          "texture": [
-            "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries/refs/heads/main/liveries/b787-9/China_southern.png"
-          ],
-          "type_id": 1
-        },
-        {
           "name": "Hainan Airlines (Soyteax 5 star Skytrax livery)",
           "credits": "TOMAIM",
           "texture": [
