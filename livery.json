@@ -324,6 +324,30 @@
             "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries/refs/heads/main/liveries/7m8/N234BE.png"
           ],
           "type_id": 1
+        },
+        {
+          "name": "WestJet (Sunwing livery)",
+          "credits": "Nichy",
+          "texture": [
+            "https://raw.githubusercontent.com/CCA131488/livery/refs/heads/main/liveries/Boeing_b737max8/WestJetsun.png"
+          ],
+          "type_id": 1
+        },
+        {
+          "name": "WestJet (Sunwing - Royalton Resorts livery)",
+          "credits": "Nichy",
+          "texture": [
+            "https://raw.githubusercontent.com/CCA131488/livery/refs/heads/main/liveries/Boeing_b737max8/WestJet_Royalton.png"
+          ],
+          "type_id": 1
+        },
+        {
+          "name": "WestJet (Sunwing - Planet Hollywood livery)",
+          "credits": "Nichy",
+          "texture": [
+            "https://raw.githubusercontent.com/CCA131488/livery/refs/heads/main/liveries/Boeing_b737max8/WestJet_Planet_Hollywood.png"
+          ],
+          "type_id": 1
         }
       ]
     },
@@ -402,7 +426,127 @@
             "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries/refs/heads/main/liveries/738/mandarin.png"
           ],
           "type_id": 1
-        }
+        },
+        {
+          "name": "Air India Express VT-AXB",
+          "credits": "Nichy",
+          "texture": [
+            "https://raw.githubusercontent.com/CCA131488/livery/refs/heads/main/liveries/Boeing_b737-800/VTAXB.png"
+          ],
+          "type_id": 1
+        },
+        {
+          "name": "Air India Express VT-AXX",
+          "credits": "Nichy",
+          "texture": [
+            "https://raw.githubusercontent.com/CCA131488/livery/refs/heads/main/liveries/Boeing_b737-800/VTAXX.png"
+          ],
+          "type_id": 1
+        },
+        {
+          "name": "Air India Express VT-AXX",
+          "credits": "Nichy",
+          "texture": [
+            "https://raw.githubusercontent.com/CCA131488/livery/refs/heads/main/liveries/Boeing_b737-800/VTAXX.png"
+          ],
+          "type_id": 1
+        },
+        {
+          "name": "Air India Express VT-AXQ",
+          "credits": "Nichy",
+          "texture": [
+            "https://raw.githubusercontent.com/CCA131488/livery/refs/heads/main/liveries/Boeing_b737-800/VTAXQ.png"
+          ],
+          "type_id": 1
+        },
+        {
+          "name": "Air India Express VT-AXJ",
+          "credits": "Nichy",
+          "texture": [
+            "https://raw.githubusercontent.com/CCA131488/livery/refs/heads/main/liveries/Boeing_b737-800/VTAXJ.png"
+          ],
+          "type_id": 1
+        },
+        {
+          "name": "Air India Express VT-AYC",
+          "credits": "Nichy",
+          "texture": [
+            "https://raw.githubusercontent.com/CCA131488/livery/refs/heads/main/liveries/Boeing_b737-800/VTAYC.png"
+          ],
+          "type_id": 1
+        },
+        {
+          "name": "Air India Express VT-AXU",
+          "credits": "Nichy",
+          "texture": [
+            "https://raw.githubusercontent.com/CCA131488/livery/refs/heads/main/liveries/Boeing_b737-800/VTAXU.png"
+          ],
+          "type_id": 1
+        },
+        {
+          "name": "Air India Express VT-AXI",
+          "credits": "Nichy",
+          "texture": [
+            "https://raw.githubusercontent.com/CCA131488/livery/refs/heads/main/liveries/Boeing_b737-800/VTAXI.png"
+          ],
+          "type_id": 1
+        },
+        {
+          "name": "Air India Express VT-AXW",
+          "credits": "Nichy",
+          "texture": [
+            "https://raw.githubusercontent.com/CCA131488/livery/refs/heads/main/liveries/Boeing_b737-800/VTAXW.png"
+          ],
+          "type_id": 1
+        },
+        {
+          "name": "Air India Express VT-AYB",
+          "credits": "Nichy",
+          "texture": [
+            "https://raw.githubusercontent.com/CCA131488/livery/refs/heads/main/liveries/Boeing_b737-800/VTAYB.png"
+          ],
+          "type_id": 1
+        },
+        {
+          "name": "Air India Express VT-AXP",
+          "credits": "Nichy",
+          "texture": [
+            "https://raw.githubusercontent.com/CCA131488/livery/refs/heads/main/liveries/Boeing_b737-800/VTAXP.png"
+          ],
+          "type_id": 1
+        },
+        {
+          "name": "Air India Express VT-AXH",
+          "credits": "Nichy",
+          "texture": [
+            "https://raw.githubusercontent.com/CCA131488/livery/refs/heads/main/liveries/Boeing_b737-800/VTAXH.png"
+          ],
+          "type_id": 1
+        },
+        {
+          "name": "Air India Express VT-AXF",
+          "credits": "Nichy",
+          "texture": [
+            "https://raw.githubusercontent.com/CCA131488/livery/refs/heads/main/liveries/Boeing_b737-800/VTAXF.png"
+          ],
+          "type_id": 1
+        },
+        {
+          "name": "Air India Express VT-AXA",
+          "credits": "Nichy",
+          "texture": [
+            "https://raw.githubusercontent.com/CCA131488/livery/refs/heads/main/liveries/Boeing_b737-800/VTAXA.png"
+          ],
+          "type_id": 1
+        },
+        {
+          "name": "Air India Express VT-AXD",
+          "credits": "Nichy",
+          "texture": [
+            "https://raw.githubusercontent.com/CCA131488/livery/refs/heads/main/liveries/Boeing_b737-800/VTAXD.png"
+          ],
+          "type_id": 1
+        },
       ]
     },
     "2892": {
