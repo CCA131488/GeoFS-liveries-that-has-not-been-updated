@@ -18,7 +18,7 @@
     let currentList = [];
     let displayType = "all";
 
-    const jsonUrl = "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/main/livery.json";
+    const jsonUrl = "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries/main/livery.json";
 
     const wait = setInterval(() => {
         if (window.geofs && (window.LiverySelector || geofs.aircraft?.instance)) {
