@@ -444,14 +444,6 @@
           "type_id": 1
         },
         {
-          "name": "Air India Express VT-AXX",
-          "credits": "Nichy",
-          "texture": [
-            "https://raw.githubusercontent.com/CCA131488/livery/refs/heads/main/liveries/Boeing_b737-800/VTAXX.png"
-          ],
-          "type_id": 1
-        },
-        {
           "name": "Air India Express VT-AXQ",
           "credits": "Nichy",
           "texture": [
@@ -1067,6 +1059,14 @@
           "credits": "CP8888",
           "texture": [
             "https://raw.githubusercontent.com/CCA131488/livery/refs/heads/main/liveries/Comac_c919/Comac_express.png"
+          ],
+          "type_id": 1
+        },
+        {
+          "name": "Tibet Airlines",
+          "credits": "Nichy",
+          "texture": [
+            "https://raw.githubusercontent.com/CCA131488/livery/refs/heads/main/liveries/Comac_c919/tibet.png"
           ],
           "type_id": 1
         }
