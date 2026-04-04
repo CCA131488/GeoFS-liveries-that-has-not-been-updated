@@ -8,3 +8,7 @@ This section contains all the unupdated liveries created by me and my friends. I
 
 When you use this plugin, press Shift to hide it.
 **If you have an idea for making a plugin better, feel free to ask it in the [issues](https://github.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/issues).**
+
+# Version: 1.3
+
+**•**  Added livery upload function.
