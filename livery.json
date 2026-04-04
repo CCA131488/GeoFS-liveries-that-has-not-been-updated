@@ -683,6 +683,15 @@
             "https://raw.githubusercontent.com/CCA131488/GeoFS-liveries/refs/heads/main/liveries/77w/KEblackpink.png"
           ],
           "type_id": 1
+        },
+        {
+          "name": "JA307M",
+          "credits": "Nichy",
+          "texture": [
+            "/models/aircraft/premium/777_300/specular_0.jpg",
+            "https://raw.githubusercontent.com/CCA131488/livery/refs/heads/main/liveries/Boeing_b777-300/JA307M.png"
+          ],
+          "type_id": 2
         }
       ]
     },
@@ -814,6 +823,14 @@
           "credits": "TOMAIM",
           "texture": [
             "https://raw.githubusercontent.com/CCA131488/livery/refs/heads/main/liveries/Airbus_a330-200/sichuancargo.png"
+          ],
+          "type_id": 1
+        },
+        {
+          "name": "SAS (80th anniversary livery)",
+          "credits": "CP8888",
+          "texture": [
+            "https://i.ibb.co/m55rsJsF/SAS80.png"
           ],
           "type_id": 1
         }
@@ -1069,6 +1086,14 @@
             "https://raw.githubusercontent.com/CCA131488/livery/refs/heads/main/liveries/Comac_c919/tibet.png"
           ],
           "type_id": 1
+        },
+        {
+          "name": "N919PR",
+          "credits": "Nichy",
+          "texture": [
+            "https://raw.githubusercontent.com/CCA131488/livery/refs/heads/main/liveries/Comac_c919/N919PR.png"
+          ],
+          "type_id": 2
         }
       ]
     },
