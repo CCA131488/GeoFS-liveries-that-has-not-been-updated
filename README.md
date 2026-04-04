@@ -1,4 +1,4 @@
-# GeoFS-liveries-that-has-not-been-updated
+# GeoFS-liveries
 
 This section contains all the unupdated liveries created by me and my friends. If you would like to contribute, please submit it to the issues section and indicate whether it is a real or virtual livery.
 
@@ -9,6 +9,8 @@ This section contains all the unupdated liveries created by me and my friends. I
 When you use this plugin, press Shift to hide it.
 **If you have an idea for making a plugin better, feel free to ask it in the [issues](https://github.com/CCA131488/GeoFS-liveries-that-has-not-been-updated/issues).**
 
-# Version: 1.3
+# Version: 1.2
 
-**•**  Added livery upload function.
+**•**  Panel draggable: Hold down the left mouse button to drag.
+**•**  Added Shift hidden hint.
+**•**  Changed the size of the credits.
