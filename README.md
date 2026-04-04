@@ -1,4 +1,4 @@
-# GeoFS-liveries-that-has-not-been-updated
+# GeoFS-liveries
 
 This section contains all the unupdated liveries created by me and my friends. If you would like to contribute, please submit it to the issues section and indicate whether it is a real or virtual livery.
 
